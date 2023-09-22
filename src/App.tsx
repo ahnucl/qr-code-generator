@@ -1,5 +1,6 @@
 import { useState } from "react";
 import QRCode from "react-qr-code";
+import { QRCodeSVG } from 'qrcode.react';
 
 export function App() {
   const [message, setMessage] = useState('')
@@ -19,8 +20,10 @@ export function App() {
 
         <div className="bg-white px-4 lg:py-10 flex items-center justify-center rounded-md">
           
-            <QRCode value={message}/>
+            <QRCode className="" value={message}/>
           
+            <QRCodeSVG className="" value={message} />
+
         </div>
 
         <div>
