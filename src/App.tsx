@@ -16,13 +16,13 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-stone-800 flex items-center justify-center p-10">
-      <div className="border border-stone-500 rounded-md w-96 bg-stone-700 overflow-hidden p-6 flex flex-col justify-between gap-6">
+      <div className="border border-stone-500 rounded-md bg-stone-700 overflow-hidden p-6 flex flex-col justify-between gap-6">
 
-        <div className="bg-white px-4 lg:py-10 flex items-center justify-center rounded-md">
+        <div className="bg-white p-10 lg:py-10 flex items-center justify-center rounded-md gap-10">
           
-            <QRCode className="" value={message}/>
+            <QRCode className="h-[256px] w-[256px]" value={message}/>
           
-            <QRCodeSVG className="" value={message} />
+            <QRCodeSVG className="h-[256px] w-[256px]" value={message} />
 
         </div>
 
