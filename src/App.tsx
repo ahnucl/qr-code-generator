@@ -16,17 +16,20 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-stone-800 flex items-center justify-center p-10">
-      <div className="border border-stone-500 rounded-md bg-stone-700 overflow-hidden p-6 flex flex-col justify-between gap-6">
-
-        <div className="bg-white p-10 lg:py-10 flex items-center justify-center rounded-md gap-10">
+      <div className="border border-stone-500 rounded-md bg-stone-700 overflow-hidden p-6 flex flex-col items-center justify-between gap-6">
+        <div className="white lg:py-10 flex flex-col md:flex-row items-center justify-center gap-10">
+          <div>
+            <QRCode className="bg-white md:h-[300px] md:w-[300px] h-full w-full p-5 md:p-10 rounded-md" value={message}/>
+            <span className="text-sm text-zinc-300 italic">react-qr-code</span>
+          </div>
           
-            <QRCode className="h-[256px] w-[256px]" value={message}/>
-          
-            <QRCodeSVG className="h-[256px] w-[256px]" value={message} />
-
+          <div className="w-full">
+            <QRCodeSVG className="bg-white md:h-[300px] md:w-[300px] h-full w-full p-5 md:p-10 rounded-md" value={message} />
+            <span className="text-sm text-zinc-300 italic">qrcode.react</span>
+          </div>
         </div>
 
-        <div>
+        <div className="max-w-md w-full">
           <p className="text-sm text-zinc-300 italic">
             O que deseja codificar?
           </p>
@@ -47,7 +50,7 @@ export function App() {
         </div>
 
         {!!savedMessages.length && 
-          (<div className="space-y-1">
+          (<div className="space-y-1 max-w-md w-full">
             <p className="text-sm text-zinc-300 italic">
               Suas mensagens salvas
             </p>
